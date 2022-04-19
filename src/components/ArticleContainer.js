@@ -1,12 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import '../styles/ArticleContainer.css'
 import ArticleCard from './ArticleCard'
 
 
 const ArticleContainer = ({ articles }) => {
 
-  const articleCards = articles.map(article => {
-    
+  const articleCards = articles.map(article => { 
     return <ArticleCard 
               key={article.id}
               id={article.id}
@@ -22,7 +21,7 @@ const ArticleContainer = ({ articles }) => {
           />
   })
 
- return (
+ return(
     <section>
      {articleCards}
     </section>
