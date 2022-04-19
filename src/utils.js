@@ -7,23 +7,14 @@ export const handleResponse = (response) => {
 }
 
 export const cleanData = (articles) => {
-  return articles.map(article => {
-    if (article.multimedia === null) {
+  const completeData = articles.filter(article => {
+    if (article.short_url && article.multimedia) {
+      return article
+    }
+  })
+  return completeData.map((article, i) => {
       return {
-        id: article.short_url,
-        category: article.section,
-        title: article.title,
-        abstract: article.abstract,
-        link: article.url,
-        byline: article.byline,
-        published: article.published_date,
-        image: '',
-        imageTagline: '',
-        imageCopyright: ''
-      }
-    } else {
-      return {
-        id: article.short_url,
+        id: `${article.short_url}${i}`,
         category: article.section,
         title: article.title,
         abstract: article.abstract,
@@ -34,6 +25,5 @@ export const cleanData = (articles) => {
         imageTagline: article.multimedia[1].caption,
         imageCopyright: article.multimedia[1].copyright
       }
-    }
-  }) 
+    }) 
 }
