@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { Component } from 'react'
 import '../styles/ArticleContainer.css'
 import ArticleCard from './ArticleCard'
 
 
 const ArticleContainer = ({ articles }) => {
+
   const articleCards = articles.map(article => {
     
     return <ArticleCard 
@@ -21,11 +22,15 @@ const ArticleContainer = ({ articles }) => {
           />
   })
 
-  return(
+ return (
     <section>
      {articleCards}
     </section>
-  )
-}
+    ) 
+} 
+
+
+
+
 
 export default ArticleContainer

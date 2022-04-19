@@ -10,11 +10,13 @@ import { cleanData } from '../utils'
 class App extends Component {
   constructor() {
     super()
-    this.state= {
-      articles: []
+    this.state = {
+      articles: [],
+      error: false,
+      isLoading: true
     }
   }
-
+  
   componentDidMount() {
     const fetchedData = []
     Promise.all([getArtArticles(), getMovieArticles(), getHealthArticles(), getSportsArticles(), getPoliticsArticles()])
@@ -24,21 +26,21 @@ class App extends Component {
           cleanedData.forEach(result => fetchedData.push(result))
         }))
         this.setState({ articles: fetchedData })
-      }
-      
+  }
+
   render() {
     return (
-      <section className='App'>
+      <main className='App'>
         <Switch>
           <Route exact path='/'>
             <NavBar />
-            <ArticleContainer articles={this.state.articles}/>
+            <ArticleContainer articles={this.state.articles} />
           </Route>
           <Route exact path='/article_details'>
             <ArticleDetails />
           </Route>
         </Switch>
-      </section>
+      </main>
     )
   }
 }
