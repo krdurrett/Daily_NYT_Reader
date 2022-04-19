@@ -6,6 +6,10 @@ export const handleResponse = (response) => {
   }
 }
 
+const cleanedUrl = (url) => {
+  return url.split('/')[3]
+}
+
 export const cleanData = (articles) => {
   const completeData = articles.filter(article => {
     if (article.short_url && article.multimedia) {
@@ -14,7 +18,7 @@ export const cleanData = (articles) => {
   })
   return completeData.map((article, i) => {
       return {
-        id: `${article.short_url}${i}`,
+        id: `${cleanedUrl(article.short_url)}${i}`,
         category: article.section,
         title: article.title,
         abstract: article.abstract,
