@@ -1,31 +1,29 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/ArticleContainer.css'
 import ArticleCard from './ArticleCard'
-import { getArtArticles, getMovieArticles, getHealthArticles, getSportsArticles, getPoliticsArticles, getWorldArticles } from '../apiCalls'
-import { cleanData } from '../utils'
 
-const ArticleContainer = () => {
-  const [articles, setArticles] = useState([])
-  
-  useEffect(() => {
-    const fetchedData = []
-    Promise.all([getArtArticles(), getMovieArticles(), getHealthArticles(), getSportsArticles(), getPoliticsArticles(), getWorldArticles()])
-      .then(data => 
-        data.forEach(dataset => {
-          let cleanedData = cleanData(dataset.results)
-          console.log(cleanedData)
-          cleanedData.forEach(result => fetchedData.push(result))
-        }))
-    setArticles(fetchedData)
-  }, [])
-  
-  // console.log(articles)
+
+const ArticleContainer = ({ articles }) => {
+  const articleCards = articles.map(article => {
+    
+    return <ArticleCard 
+              key={article.id}
+              id={article.id}
+              category={article.category}
+              title={article.title}
+              abstract={article.abstract}
+              link={article.link}
+              byline={article.byline}
+              published={article.published}
+              image={article.image}
+              imageTagline={article.imageTagline}
+              imageCopyright={article.imageCopyright}
+          />
+  })
 
   return(
     <section>
-      <ArticleCard />
-      <ArticleCard />
-      <ArticleCard />
+     {articleCards}
     </section>
   )
 }

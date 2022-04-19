@@ -22,11 +22,6 @@ export const getSportsArticles = () => {
     .then(response => handleResponse(response))
 }
 
-export const getWorldArticles = () => {
-  return fetch(`https://api.nytimes.com/svc/topstories/v2/world.json?api-key=${apiKey}`)
-    .then(response => handleResponse(response))
-}
-
 export const getPoliticsArticles = () => {
   return fetch(`https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=${apiKey}`)
     .then(response => handleResponse(response))
