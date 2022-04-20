@@ -4,12 +4,15 @@ import { Route, Switch } from 'react-router-dom'
 import NavBar from './NavBar'
 import ArticleContainer from './ArticleContainer'
 import ArticleDetails from './ArticleDetails'
+import ErrorModal from './ErrorModal'
+import Error404 from './Error404'
 import { getArtArticles, getMovieArticles, getHealthArticles, getSportsArticles, getPoliticsArticles } from '../apiCalls'
 import { cleanData } from '../utils'
 
 const App = () => {
   const [articles, setArticles] = useState([])
   const [filteredArticles, setFilteredArticles] = useState([])
+  const [error, setError] = useState('')
       
   useEffect(() => {
     const fetchedData = []
@@ -19,7 +22,9 @@ const App = () => {
           let cleanedData = cleanData(dataset.results)
           cleanedData.forEach(result => fetchedData.push(result))
           setArticles([...fetchedData])
+          setError('')
         }))
+        .catch(err => setError(err.message))
   }, [])
 
   const selectArticle = (id) => { 
@@ -31,6 +36,8 @@ const App = () => {
     let filteredArticles = articles.filter(article => article.category.toLowerCase().includes(inputValue.toLowerCase()))
     setFilteredArticles([...filteredArticles])
   }
+
+  const errorModal = error ? <ErrorModal message={error}/> : null
 
   return (
     <main>
@@ -47,7 +54,11 @@ const App = () => {
           }
           return <ArticleDetails article={currentArticle} />
         }} />
+         <Route>
+            <Error404 />
+          </Route>
       </Switch>
+      {errorModal}
     </main>
   )
   
