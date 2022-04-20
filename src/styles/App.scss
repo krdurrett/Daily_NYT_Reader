@@ -1,38 +1,53 @@
-.App {
+@use "./Reset.scss";
+@use "./variable" as variable;
+
+App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  height: 100vh;
+  overscroll-behavior: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main {
+  background-color: variable.$background;
+  font-size: 1.5em;
+  color: variable.$black;
+  font-family: variable.$averiaLibre;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.body {
+  padding: 5%;
 }
 
-.App-link {
-  color: #61dafb;
+h1,
+h2,
+h3 {
+  font-family: variable.$averiaLibre;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  font-family: variable.$lato;
+  line-height: 1.5em;
+}
+
+a:link {
+  text-decoration: none;
+  color: variable.$black;
+}
+
+a:visited {
+  text-decoration: none;
+  color: variable.$black;
+}
+
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:focus {
+  text-decoration: none;
 }
