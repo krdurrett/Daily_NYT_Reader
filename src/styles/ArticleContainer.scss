@@ -1,0 +1,67 @@
+@use "./variable" as variable;
+
+.article-container {
+  padding: 10% 2% 2% 2%;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    width: 40%;
+    align-self: center;
+    margin-top: 1%;
+  }
+
+  .article-card {
+    background-color: variable.$blue;
+    margin: 2%;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5em;
+    box-shadow: 2px 2px 5px 3px #505050;
+
+    h3 {
+      font-size: 1.2em;
+      margin: 0.5em 0;
+    }
+
+    &:hover {
+      background-color: variable.$hoverBlue;
+      color: variable.$white;
+    }
+  }
+}
+/*
+##Device = Desktops
+##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  // .article-topics nav {
+  //   margin: 0 10%;
+  // }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  // .article-topics nav {
+  //   margin: 0 10%;
+  // }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .articles-container .article-card {
+    flex-direction: column;
+    text-align: center;
+
+    // .title-details {
+    h3 {
+      font-size: 1em;
+    }
+    // }
+
+    img {
+      margin: 10% 0;
+    }
+  }
+}

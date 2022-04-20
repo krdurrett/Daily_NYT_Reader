@@ -18,7 +18,7 @@ const App = () => {
         data.forEach(dataset => {
           let cleanedData = cleanData(dataset.results)
           cleanedData.forEach(result => fetchedData.push(result))
-          setArticles(fetchedData)
+          setArticles([...fetchedData])
         }))
   }, [])
 

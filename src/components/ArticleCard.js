@@ -4,11 +4,13 @@ import '../styles/ArticleCard.scss'
 
 const ArticleCard = ({ id, image, title, published, category }) => {
   return(
-    <Link to={`/article_details/${id}`} id={id}>
+    <Link className='article-card' to={`/article_details/${id}`} id={id}>
       <img src={image}></img>
-      <p>{title}</p>
-      <p>{published}</p>
-      <p>{category}</p>
+      <h3>{title}</h3>
+      <div>
+        <p>Published: {published}</p>
+        <p>{category}</p>
+      </div>
     </Link>
   )
 }

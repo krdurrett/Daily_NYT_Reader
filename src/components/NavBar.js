@@ -4,7 +4,11 @@ import '../styles/NavBar.scss'
 
 const NavBar = () => {
   return (
-  <Link to='/'>Daily NYT Reader</Link>
+    <nav>
+      <Link to='/'>
+        <h1>Daily NYT Reader</h1>
+      </Link>
+    </nav>
   )
 }
 
