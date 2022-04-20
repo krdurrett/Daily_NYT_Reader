@@ -1,19 +1,19 @@
 import React from 'react'
-import '../styles/ArticleDetails.css'
+import '../styles/ArticleDetails.scss'
 
 const ArticleDetails = ({ article }) => {
-  console.log('article details', article)
-
   return(
     <>
       <h2>{article.title}</h2>
-      <p>{article.abstract}</p>
       <p>{article.byline}</p>
-      <p>{article.link}</p>
-      <p>{article.published}</p>
+      <p>Published: {article.published}</p>
       <img src={article.image} />
+      <p>{article.imageTagline}</p>
+      <p>{article.imageCopyright}</p>
+      <p>{article.abstract}</p>
+      <a href={article.link}>Link to article</a>
     </>
-   
+  
   )
 }
 

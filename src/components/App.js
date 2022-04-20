@@ -1,4 +1,4 @@
-import '../styles/App.css'
+import '../styles/App.scss'
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import NavBar from './NavBar'
@@ -26,12 +26,18 @@ const App = () => {
     return articles.find(article => article.id === id)         
   }
 
+
+  const getFilteredArticles = (inputValue) => {
+    let filteredArticles = articles.filter(article => article.category.toLowerCase().includes(inputValue.toLowerCase()))
+    setFilteredArticles([...filteredArticles])
+  }
+
   return (
-    <main className='App'>
+    <main>
+      <NavBar />
       <Switch>
         <Route exact path='/'>
-          <NavBar />
-          <ArticleContainer articles={articles} />
+          <ArticleContainer articles={articles} filteredArticles={filteredArticles} getFilteredArticles={getFilteredArticles} />
         </Route>
         <Route path='/article_details/:id' render={({ match }) => {
           console.log(match.params.id)
