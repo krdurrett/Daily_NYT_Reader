@@ -1,12 +1,10 @@
 import React from 'react'
-import '../styles/NavBar.css'
+import { Link } from 'react-router-dom'
+import '../styles/NavBar.scss'
 
 const NavBar = () => {
   return (
-    <section>
-      <h2>Daily NYT Reader</h2>
-      <input placeholder='Search Articles'/>
-    </section>
+  <Link to='/'>Daily NYT Reader</Link>
   )
 }
 
