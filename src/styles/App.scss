@@ -1,9 +1,9 @@
 @use "./Reset.scss";
 @use "./variable" as variable;
 
-App {
-  text-align: center;
-}
+// App {
+//   text-align: center;
+// }
 
 body {
   height: 100vh;
@@ -17,9 +17,9 @@ main {
   font-family: variable.$averiaLibre;
 }
 
-.body {
-  padding: 5%;
-}
+// .body {
+//   padding: 5%;
+// }
 
 h1,
 h2,
