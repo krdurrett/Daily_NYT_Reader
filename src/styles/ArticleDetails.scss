@@ -1,0 +1,81 @@
+@use "./variable" as variable;
+
+.article-details {
+  text-align: center;
+  padding: 10%;
+  height: 100vh;
+
+  .image-and-caption {
+    margin: 2%;
+
+    img {
+      border-radius: 0.5em;
+    }
+
+    .photo-caption {
+      margin: 0 25%;
+
+      small {
+        font-size: 0.5em;
+        font-family: variable.$lato;
+      }
+    }
+  }
+
+  .title-and-more {
+    margin: 2% 10%;
+
+    h2 {
+      font-size: 2em;
+      margin: 1%;
+    }
+
+    .published {
+      font-size: 0.75em;
+    }
+
+    button {
+      background-color: variable.$blue;
+      margin: 5%;
+      padding: 2% 5%;
+      font-size: 1em;
+      font-family: "Averia Libre";
+      border: none;
+      border-radius: 0.5em;
+      box-shadow: 2px 2px 5px 3px #505050;
+
+      &:hover {
+        background-color: variable.$hoverBlue;
+        color: variable.$white;
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  main {
+    height: 100vh;
+  }
+
+  .article-details {
+    height: 100%;
+
+    .image-and-caption img {
+      width: 100%;
+    }
+
+    .title-and-more {
+      h2 {
+        font-size: 1em;
+      }
+
+      p {
+        font-size: 0.75em;
+      }
+
+      .published {
+        font-size: 0.5em;
+      }
+    }
+  }
+}

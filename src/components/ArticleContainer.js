@@ -35,7 +35,7 @@ const ArticleContainer = ({ articles, filteredArticles, getFilteredArticles }) =
   })
 
  return(
-    <section>
+    <section className='articles-container'>
       <input placeholder='Search Articles By Category' onChange={ event => handleChange(event) } />
       {articleCards}
     </section>
