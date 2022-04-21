@@ -6,9 +6,14 @@ export const handleResponse = (response) => {
   }
 }
 
-const cleanedUrl = (url) => {
+const cleanUrl = (url) => {
   return url.split('/')[3]
 }
+
+const cleanPublishedDate = (date) => {
+  const newDate = date.split('T')[0].split('-')
+  return `${newDate[1]}-${newDate[2]}-${newDate[0]}`
+} 
 
 export const cleanData = (articles) => {
   const completeData = articles.filter(article => {
@@ -18,13 +23,13 @@ export const cleanData = (articles) => {
   })
   return completeData.map((article, i) => {
       return {
-        id: `${cleanedUrl(article.short_url)}${i}`,
+        id: `${cleanUrl(article.short_url)}${i}`,
         category: article.section,
         title: article.title,
         abstract: article.abstract,
         link: article.url,
         byline: article.byline,
-        published: article.published_date,
+        published: cleanPublishedDate(article.published_date),
         image: article.multimedia[1].url,
         imageTagline: article.multimedia[1].caption,
         imageCopyright: article.multimedia[1].copyright
