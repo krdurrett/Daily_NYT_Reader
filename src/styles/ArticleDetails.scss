@@ -2,33 +2,30 @@
 
 .article-details {
   padding: 10% 2% 2% 2%;
-  display: flex;
-  flex-direction: column;
   line-height: 2em;
+
+  .title-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.2em;
+    margin: 1em 0.5em 0.5em 0;
+  }
 
   .info {
     display: flex;
-    line-height: 2em;
-    img {
-      width: 50%;
-    }
+    margin-top: 0.5em;
 
-    h3 {
-      font-size: 1.2em;
-      margin: 0.5em 0.5em;
-    }
-
-    .text {
+    .overview {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin-left: 2%;
-      inline-size: 50%;
-    }
+      margin-left: 1%;
 
-    p {
-      width: 48%;
-      text-align: end;
+      .copy-right {
+        width: 48%;
+        text-align: end;
+      }
     }
   }
 }
@@ -40,12 +37,13 @@
 
   .article-details {
     height: 100%;
+    flex-wrap: wrap;
 
-    .image-and-caption img {
+    .overview {
       width: 100%;
     }
 
-    .title-and-more {
+    .title-text {
       h2 {
         font-size: 1em;
       }
@@ -54,7 +52,7 @@
         font-size: 0.75em;
       }
 
-      .published {
+      .copy-right {
         font-size: 0.5em;
       }
     }

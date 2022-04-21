@@ -5,14 +5,16 @@
 //   text-align: center;
 // }
 
+html,
 body {
   height: 100vh;
   overscroll-behavior: none;
+  background-color: variable.$background;
 }
 
 main {
   background-color: variable.$background;
-  height: 100vh;
+  // height: 100vh;
   font-size: 1.5em;
   color: variable.$black;
   font-family: variable.$averiaLibre;
@@ -26,6 +28,7 @@ h1,
 h2,
 h3 {
   font-family: variable.$averiaLibre;
+  font-weight: bolder;
 }
 
 p {
