@@ -21,6 +21,7 @@ Welcome to Daily NYT Reader--a new app for you to peruse top story summaries fro
 Daily NYT Reader is a solo take home challenge giving by Turing School of Software and Design. It is intended to be completed in about 8 hours. The goal is to create an application where a user can view top stories from the NYT, sort them in some way, and be able to view details about the article, and link to the article itself. 
 
 - Project Spec here: [Take-Home](https://mod4.turing.edu/projects/take_home/take_home_fe)
+- Project WireFrame and Component Architecture: [WireFrame](https://excalidraw.com/#room=f4ca09be12eb892661c2,JqZBkpC39j0Lqe9cfABKkg)
 
 
 ## Installation Instructions <a name="installationInstructions"></a>
@@ -68,10 +69,13 @@ The React architecture is based on seven functional components (App.js, ArticleC
 - Fetch API
 - NPM
 - Cypress
+- Mocha/Chai
 
 ## Testing <a name="testing"></a>
 
 Cypress was used for E2E and integration testing. To test the application: run `npm run cypress` and you will have a window open that gives you the ability to click on each test and see whether they pass. Make sure you've run `npm start` in a separate terminal tab before you begin the testing. 
+
+Mocha/Chai was used for unit testing. To test the application: run `npm test`. The test will run in your terminal.
 
 
 ## Project Challenges <a name="projectChallenges"></a>
