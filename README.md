@@ -41,9 +41,9 @@ Daily NYT Reader is a solo take home challenge giving by Turing School of Softwa
 
 ## Directions and Features <a name="directions"></a>
 
-On page load, see a list of feelings. Click on a feeling, and see a list of actions you can take based on feeling. 
+On page load, see a list of articles. 
 
-![landing_page_view](https://media.giphy.com/media/nhkpHvRK8D4mEdsBLR/giphy.gif)
+![landing_page_view](https://media.giphy.com/media/sTLP9pzQakTRDF1Tvz/giphy.gif)
 
 ## Code Architecture <a name="codeArchitecture"></a>
 
