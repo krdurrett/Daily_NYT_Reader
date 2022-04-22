@@ -64,7 +64,7 @@ The React architecture is based on seven functional components (App.js, ArticleC
 - React
 - React Router
 - Javascript
-- CSS3
+- Sass
 - HTML5
 - Fetch API
 - NPM
