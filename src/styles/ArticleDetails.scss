@@ -16,45 +16,49 @@
     display: flex;
     margin-top: 0.5em;
 
+    .image-tag {
+      .copy-right {
+        text-align: end;
+      }
+    }
+
     .overview {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       margin-left: 1%;
 
-      .copy-right {
-        width: 48%;
-        text-align: end;
+      .article-link {
+        margin-bottom: 7%;
       }
     }
   }
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 768px) {
   main {
-    height: 100vh;
+    height: 100%;
+    width: 100vw;
   }
 
   .article-details {
-    height: 100%;
-    flex-wrap: wrap;
+    .info {
+      flex-direction: column;
+      font-size: 0.75em;
+
+      .image-tag {
+        img {
+          width: 100%;
+        }
+
+        .copy-right {
+          font-size: 0.5em;
+        }
+      }
+    }
 
     .overview {
       width: 100%;
-    }
-
-    .title-text {
-      h2 {
-        font-size: 1em;
-      }
-
-      p {
-        font-size: 0.75em;
-      }
-
-      .copy-right {
-        font-size: 0.5em;
-      }
     }
   }
 }

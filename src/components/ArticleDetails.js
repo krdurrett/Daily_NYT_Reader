@@ -12,16 +12,16 @@ const ArticleDetails = ({ article }) => {
       <article className='info'>
         <div className='image-tag'>
           <img src={article.image} />
+          <p className='copy-right'>{article.imageCopyright}</p>
         </div>
         <div className='overview'>
           <div>
             <p>{article.imageTagline}</p>
             <p>{article.abstract}</p>
           </div>
-          <a href={article.link}>Link to article</a>
+          <a className='article-link' href={article.link}>Link to article</a>
         </div>  
       </article>  
-      <p className='copy-right'>{article.imageCopyright}</p>
     </section>
   )
 }

@@ -17,7 +17,7 @@ const cleanPublishedDate = (date) => {
 
 export const cleanData = (articles) => {
   const completeData = articles.filter(article => {
-    if (article.short_url && article.multimedia) {
+    if (article.short_url && article.multimedia.length) {
       return article
     }
   })
