@@ -49,6 +49,10 @@ You can narrow your article view by searching by category.
 
 ![search_articles](https://media.giphy.com/media/OMpU0yv98kfDyfTHBf/giphy.gif)
 
+Click on an article to view more details and find the link to the article on NYT website.
+
+![article_details](https://media.giphy.com/media/5otOlOgPwC6DjrF46q/giphy.gif)
+
 ## Code Architecture <a name="codeArchitecture"></a>
 
 The React architecture is based on seven functional components (App.js, ArticleCard.js, ArticleContainer.js, ArticleDetails.js, Error404.js, ErrorModal.js, NavBar.js). Hooks are used to manage state and network requests.
